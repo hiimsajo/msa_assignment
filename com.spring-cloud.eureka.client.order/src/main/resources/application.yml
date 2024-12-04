@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: order-service
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      username: default
+      password: systempass
+  datasource:
+    url: jdbc:mysql://localhost:3306/msa_assignment
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+server:
+  port: 19092
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
+
+management:
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0
